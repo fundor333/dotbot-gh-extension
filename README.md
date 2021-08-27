@@ -1,7 +1,6 @@
 # dotbot-gh-extension
-Plugin for DotBot for GH Extension
 
-Plugin for [`dotbot`](https://github.com/anishathalye/dotbot) to edit and sync crontab without deleting or editing manual added cronjob, only manage dotbot cron.
+Plugin for [`dotbot`](https://github.com/anishathalye/dotbot) to install and update GH extension.
 
 ## Installation
 
