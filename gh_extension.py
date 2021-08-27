@@ -29,6 +29,8 @@ class GHExtension(dotbot.Plugin):
         try:
             for entry in data:
                 self._directives[directive](entry)
+            command = "gh extension upgrade --all"
+            subprocess.call(command, cwd=self.cwd, shell=True)
             return True
         except ValueError as e:
             self._log.error(e)
@@ -54,7 +56,8 @@ class GHExtension(dotbot.Plugin):
 
             if "flags" not in data:
                 self._log.warning("Key 'flags' not found in {}".format(data))
-                self._log.warning("Using default flags {}".format(self._default_flags))
+                self._log.warning(
+                    "Using default flags {}".format(self._default_flags))
 
             value = data[key]
             flags = data.get("flags", self._default_flags)
